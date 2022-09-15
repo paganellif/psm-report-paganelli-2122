@@ -7,6 +7,7 @@
 \documentclass[10pt]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{multicol}
 \usepackage {mathtools}
 \usetheme{CambridgeUS}
 \usecolortheme{dolphin}
@@ -81,18 +82,47 @@
 \section{Tecnologie}
 \begin{frame}{Tecnologie}
     \begin{itemize}
-         \item \textit{Kotlin} -
-         \item \textit{Kotlin Multiplatform} - 
+    \item \textbf{Linguaggio}
+    \begin{itemize}
+        \item \textit{Kotlin} -
+    \end{itemize}
+    \item \textbf{Architettura}
+    \begin{itemize}
+        \item \textit{Kotlin Multiplatform} - 
+        \item \textit{Single Activity} -
+        \item \textit{View Model + Flow + Repository} -
+    \end{itemize}
+    \item \textbf{Librerie}
+    \begin{itemize}
          \item \textit{Koin} - Dependency Injection
-         \item \textit{SqlDelight} -
-         \item \textit{} -
-         
+         \item \textit{SqlDelight} - Gestione persistenza dati tramite astrazione di SQLite
+         \item \textit{Ktor} -
+         \item \textit{Napier} -
+         \item \textit{KVault} -
+         \item \textit{Readium} -
+    \end{itemize}
      \end{itemize}
 \end{frame}
 
 \section{Screenshots}
     \begin{frame}{Screenshots}
- Summary of the above...
+    \begin{multicols}{3}
+        \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{maggioli.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{paging}
+        \end{figure}
+                \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{maggioli.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{paging}
+        \end{figure}
+                        \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{maggioli.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{paging}
+        \end{figure}
+        \end{multicols}
     \end{frame}
 
 \end{document}
