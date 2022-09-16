@@ -16,7 +16,7 @@
 \definecolor{myNewColorA}{RGB}{0, 55, 158}
 \definecolor{myNewColorB}{RGB}{0, 55, 158}
 \definecolor{myNewColorC}{RGB}{0, 55, 158}
-\setbeamercolor*{palette primary}{bg=myNewColorC}
+\setbeamercolor*{palette primary}{bg=myNewColorC, fg = white}
 \setbeamercolor*{palette secondary}{bg=myNewColorB, fg = white}
 \setbeamercolor*{palette tertiary}{bg=myNewColorA, fg = white}
 \setbeamercolor*{titlelike}{fg=myNewColorA}
@@ -34,7 +34,7 @@
 \setbeamerfont{author}{size=\small}
 \setbeamerfont{date}{size=\small}
 \setbeamerfont{institute}{size=\small}
-\title[Alma Mater Studiorum - Università di Bologna]{MaggioliEbook \\ Digital Publishing E-Reader Mobile App}
+\title[MaggioliEbook]{MaggioliEbook \\ Digital Publishing E-Reader Mobile App}
 \author[Filippo Paganelli]{Filippo Paganelli}
 
 \institute[0000926989]{Alma Mater Studiorum - Università di Bologna \\ Campus di Cesena \\ Programmazione di Sistemi Mobile}
@@ -75,7 +75,12 @@
 \section{Funzionalità}
     \begin{frame}{Funzionalità}
      \begin{itemize}
-         \item f
+         \item Lettura dei contenuti digitali forniti da Maggioli.
+         \item I contenuti sono visualizzati in modo fluido, adattandosi alle dimensioni del dispositivo e alle necessità dell'utente (grandezza caratteri, margini, spacing, tema chiaro/sepia/scuro, contrasto, ...).
+         \item I contenuti che è possibile visualizzare sono basati sugli abbonamenti sottoscritti dall'utente.
+         \item Accesso tramite autenticazione.
+         \item Gestione preferiti, evidenziazione, sottolineatura, annotazioni e segnalibri.
+         \item Ricerca testuale all'interno del contenuto.
      \end{itemize}
     \end{frame}
 
@@ -89,41 +94,42 @@
     \end{itemize}
     \item \textbf{Architettura}
     \begin{itemize}
-        \item \href{https://kotlinlang.org/lp/mobile/}{\textit{Kotlin Multiplatform}} - 
-        \item \href{https://developer.android.com/guide/navigation/navigation-migrate}{\textit{Single Activity}} -
-        \item \textit{View Model + Flow + Repository} -
-        \item \textit{Jetpack Compose} -
+        \item \href{https://kotlinlang.org/lp/mobile/}{\textit{Kotlin Multiplatform}}
+        \item \href{https://developer.android.com/guide/navigation/navigation-migrate}{\textit{Single Activity}}
+        \item \href{https://developer.android.com/jetpack}{Android Jetpack} - \textit{View Model + Flow +  Repository}, \href{https://developer.android.com/jetpack/compose}{\textit{Compose}}, \href{https://developer.android.com/guide/navigation}{\textit{Navigation}}, \href{https://developer.android.com/topic/libraries/architecture/paging/v3-overview}{Paging 3}
     \end{itemize}
     \item \textbf{Librerie}
     \begin{itemize}
          \item \href{https://insert-koin.io/}{\textit{Koin}} - Dependency Injection
-         \item \href{https://cashapp.github.io/sqldelight/}{\textit{SqlDelight}} - Gestione persistenza dati tramite astrazione di SQLite
-         \item \href{https://ktor.io/}{\textit{Ktor}} -
-         \item \href{https://github.com/AAkira/Napier}{\textit{Napier}} -
-         \item \href{https://github.com/Liftric/KVault}{\textit{KVault}} -
-         \item \href{https://readium.org/}{\textit{Readium}} -
+         \item \href{https://cashapp.github.io/sqldelight/}{\textit{SqlDelight}} - Storage (astrazione SQLite)
+         \item \href{https://ktor.io/}{\textit{Ktor}} - Networking (Http Client)
+         \item \href{https://github.com/AAkira/Napier}{\textit{Napier}} - Logging
+         \item \href{https://github.com/Liftric/KVault}{\textit{KVault}} - Storage (SharedPreferences)
+         \item \href{https://readium.org/}{\textit{Readium}} - Lettore EPUB
     \end{itemize}
      \end{itemize}
 \end{frame}
 
 \section{Screenshots}
     \begin{frame}{Screenshots}
-    \begin{multicols}{3}
-        \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{login.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{login}
-        \end{figure}
-                \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{home.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{home}
-        \end{figure}
-                        \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{ricerca.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{ricerca}
-        \end{figure}
+        \begin{multicols}{3}
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{login.png}
+                \caption{Schermata di login degli utenti abbonati}
+                \label{login}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{home.png}
+                \caption{Schermata home principale per la visualizzazione e la ricerca dei documenti digitali Maggioli}
+                \label{home}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{ricerca.png}
+                \caption{Esempio di ricerca per parola chiave nella schermata principale}
+                \label{ricerca}
+            \end{figure}
         \end{multicols}
     \end{frame}
 
@@ -131,64 +137,65 @@
         \begin{multicols}{3}
             \begin{figure}[H]
                 \includegraphics[width=0.2\textwidth]{sidenav.png}
-                \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+                \caption{Menu laterale per la navigazione all'interno della applicazione}
                 \label{sidenav}
             \end{figure}
             
             \begin{figure}[H]
                 \includegraphics[width=0.2\textwidth]{preferiti.png}
-                \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+                \caption{Schermata per la visualizzazione e la ricerca dei documenti preferiti dall'utente}
                 \label{preferiti}
             \end{figure}
 
             \begin{figure}[H]
                 \includegraphics[width=0.2\textwidth]{about.png}
-                \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+                \caption{Schermata per la visualizzazione delle informazioni generali relative alla applicazione}
                 \label{about}
             \end{figure}
         \end{multicols}
     \end{frame}
 
-        \begin{frame}{Screenshots}
-    \begin{multicols}{3}
-        \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{reader_settings.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{reader}
-        \end{figure}
-        
-                \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{annotations.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{annotations}
-        \end{figure}
-                        \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{annotation2.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{annotation2}
-        \end{figure}
+    \begin{frame}{Screenshots}
+        \begin{multicols}{3}
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{reader_settings.png}
+                \caption{Lettura documento digitale d'esempio e impostazioni del lettore}
+                \label{reader}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{annotations.png}
+                \caption{Esempio di inserimento di annotazioni come evidenziazioni e sottolineature}
+                \label{annotations}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{annotation2.png}
+                \caption{Annotazioni memorizzate sul dispositivo e consultabili dal menu del lettore}
+                \label{annotation2}
+            \end{figure}
         \end{multicols}
     \end{frame}
 
-        \begin{frame}{Screenshots}
-    \begin{multicols}{3}
-        \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{toc.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{toc}
-        \end{figure}
-        
-                \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{ricerca_testo.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{ricerca_testo}
-        \end{figure}
-        
-                        \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{ricerca_testo2.png}
-        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{ricerca_testo2}
-        \end{figure}
+    \begin{frame}{Screenshots}
+        \begin{multicols}{3}
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{toc.png}
+                \caption{Elenco dei contenuti (TOC) del documento aperto e consultabile dal menu del lettore}
+                \label{toc}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{ricerca_testo.png}
+                \caption{Ricerca testuale nel contenuto del documento aperto con relativo risultato}
+                \label{ricerca_testo}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{ricerca_testo2.png}
+                \caption{Evidenziazioni automatiche delle occorrenze del testo cercato}
+                \label{ricerca_testo2}
+            \end{figure}
         \end{multicols}
     \end{frame}
 
