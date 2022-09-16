@@ -51,16 +51,16 @@
 %    \tableofcontents[currentsection]
 %  \end{frame}
 %}
-\AtBeginSection[]{
-  \begin{frame}
-  \vfill
-  \centering
-  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-    \usebeamerfont{title}\insertsectionhead\par%
-  \end{beamercolorbox}
-  \vfill
-  \end{frame}
-}
+%\AtBeginSection[]{
+%  \begin{frame}
+%  \vfill
+%  \centering
+%  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+%    \usebeamerfont{title}\insertsectionhead\par%
+%  \end{beamercolorbox}
+%  \vfill
+%  \end{frame}
+%}
 %------------------------------------------------------------
 
 \begin{document}
@@ -82,24 +82,26 @@
 \section{Tecnologie}
 \begin{frame}{Tecnologie}
     \begin{itemize}
-    \item \textbf{Linguaggio}
+    \item \textbf{SDK \& Tools}
     \begin{itemize}
-        \item \textit{Kotlin} -
+        \item \href{https://developer.android.com/about/versions/12}{\textit{Android} 12 (API 31, 32)} + \href{https://github.com/JetBrains/kotlin/releases/tag/v1.7.0}{\textit{Kotlin} 1.7.0}
+        \item \href{https://docs.gradle.org/7.4/userguide/userguide.html}{\textit{Gradle} 7.4}
     \end{itemize}
     \item \textbf{Architettura}
     \begin{itemize}
-        \item \textit{Kotlin Multiplatform} - 
-        \item \textit{Single Activity} -
+        \item \href{https://kotlinlang.org/lp/mobile/}{\textit{Kotlin Multiplatform}} - 
+        \item \href{https://developer.android.com/guide/navigation/navigation-migrate}{\textit{Single Activity}} -
         \item \textit{View Model + Flow + Repository} -
+        \item \textit{Jetpack Compose} -
     \end{itemize}
     \item \textbf{Librerie}
     \begin{itemize}
-         \item \textit{Koin} - Dependency Injection
-         \item \textit{SqlDelight} - Gestione persistenza dati tramite astrazione di SQLite
-         \item \textit{Ktor} -
-         \item \textit{Napier} -
-         \item \textit{KVault} -
-         \item \textit{Readium} -
+         \item \href{https://insert-koin.io/}{\textit{Koin}} - Dependency Injection
+         \item \href{https://cashapp.github.io/sqldelight/}{\textit{SqlDelight}} - Gestione persistenza dati tramite astrazione di SQLite
+         \item \href{https://ktor.io/}{\textit{Ktor}} -
+         \item \href{https://github.com/AAkira/Napier}{\textit{Napier}} -
+         \item \href{https://github.com/Liftric/KVault}{\textit{KVault}} -
+         \item \href{https://readium.org/}{\textit{Readium}} -
     \end{itemize}
      \end{itemize}
 \end{frame}
@@ -108,19 +110,84 @@
     \begin{frame}{Screenshots}
     \begin{multicols}{3}
         \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{maggioli.png}
+        \includegraphics[width=0.2\textwidth]{login.png}
         \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{paging}
+        \label{login}
         \end{figure}
                 \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{maggioli.png}
+        \includegraphics[width=0.2\textwidth]{home.png}
         \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{paging}
+        \label{home}
         \end{figure}
                         \begin{figure}[H]
-        \includegraphics[width=0.2\textwidth]{maggioli.png}
+        \includegraphics[width=0.2\textwidth]{ricerca.png}
         \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
-        \label{paging}
+        \label{ricerca}
+        \end{figure}
+        \end{multicols}
+    \end{frame}
+
+    \begin{frame}{Screenshots}
+        \begin{multicols}{3}
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{sidenav.png}
+                \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+                \label{sidenav}
+            \end{figure}
+            
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{preferiti.png}
+                \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+                \label{preferiti}
+            \end{figure}
+
+            \begin{figure}[H]
+                \includegraphics[width=0.2\textwidth]{about.png}
+                \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+                \label{about}
+            \end{figure}
+        \end{multicols}
+    \end{frame}
+
+        \begin{frame}{Screenshots}
+    \begin{multicols}{3}
+        \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{reader_settings.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{reader}
+        \end{figure}
+        
+                \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{annotations.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{annotations}
+        \end{figure}
+                        \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{annotation2.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{annotation2}
+        \end{figure}
+        \end{multicols}
+    \end{frame}
+
+        \begin{frame}{Screenshots}
+    \begin{multicols}{3}
+        \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{toc.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{toc}
+        \end{figure}
+        
+                \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{ricerca_testo.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{ricerca_testo}
+        \end{figure}
+        
+                        \begin{figure}[H]
+        \includegraphics[width=0.2\textwidth]{ricerca_testo2.png}
+        \caption{UML - Diagramma delle classi: Paginazione dati nella schermata principale}
+        \label{ricerca_testo2}
         \end{figure}
         \end{multicols}
     \end{frame}
